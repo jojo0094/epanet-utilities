@@ -18,6 +18,16 @@ interface Utility {
 // List of utilities with icons and colors
 const utilities: Utility[] = [
   {
+    id: "Asset-explorer",
+    title: "Asset Explorer",
+    description:
+      "GenAI-based tool to explore and visualize assets in your network.",
+    link: "/asset-explorer",
+    type: "internal",
+    icon: <Globe className="h-6 w-6" />,
+    color: "from-blue-500 to-cyan-500",
+  },
+  {
     id: "projection-converter",
     title: "Projection Converter",
     description:

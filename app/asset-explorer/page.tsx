@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { FileUploader } from "@/components/file-uploader";
 import { ProjectionConverter } from "@/components/projection-converter";
-import { MapDisplay } from "@/components/map-display";
+import { DeckGlMapDisplay } from "@/components/deckgl-map-display";
 import type { NetworkData, Projection } from "@/lib/types";
 import { FeatureCollection, GeoJsonProperties, Geometry } from "geojson";
 import {
@@ -19,6 +19,7 @@ import { isLikelyLatLng } from "@/lib/check-projection";
 import { approximateReprojectToLatLng } from "@/lib/approx-reproject";
 
 import { toGeoJson, ToGeoJsonResult } from "@/lib/epanet-geojson";
+import {MapDisplay} from "@/components/map-display";
 
 export default function Home() {
   const [networkData, setNetworkData] = useState<NetworkData | null>(null);
@@ -189,7 +190,7 @@ export default function Home() {
 
       <header className="mb-12 text-center">
         <h1 className="text-4xl font-bold tracking-tight text-slate-900 dark:text-white mb-3">
-          EPANET Projection Converter this is inside
+          EPANET Projection Converter
         </h1>
         <p className="text-lg text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
           Convert your EPANET network files between different coordinate systems
@@ -220,7 +221,7 @@ export default function Home() {
 
         <div className="lg:col-span-8">
           <div className="bg-white dark:bg-slate-800 rounded-xl shadow-sm p-6 h-full">
-            <MapDisplay geoJSON={mapData} />
+            <DeckGlMapDisplay geoJSON={mapData} />
           </div>
         </div>
       </div>
